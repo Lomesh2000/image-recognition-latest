@@ -7,7 +7,7 @@ Created on Thu Sep 30 11:53:20 2021
 
 from flask import Flask,request,jsonify,render_template
 import numpy as np
-import keras
+from keras.models import load_model
 from PIL import Image
 import flask
 import os
@@ -16,7 +16,7 @@ from werkzeug.utils import secure_filename
 
 
 app=Flask(__name__)
-model=keras.models.load_model('image_recognition_model.h5')
+model=load_model('image_recognition_model.h5')
 
 classes = { 
     0:'aeroplane',
